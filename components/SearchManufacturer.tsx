@@ -41,7 +41,7 @@ export default function SearchManufacturer({ manufacturer, setManufacturer }
                     />
                     <Transition
                         as={Fragment}
-                        Leave="transition ease-in duration-100"
+                        leave="transition ease-in duration-100"
                         leaveFrom='opacity-100'
                         leaveTo='opacity-0'
                         afterLeave={() => setQuery('')}

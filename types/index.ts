@@ -1,14 +1,13 @@
 import { MouseEventHandler } from "react";
 
 export interface CustomButtonProps {
-    title: string;
-    containerStyles?: string;
-    handleClick?: MouseEventHandler<HTMLButtonElement>;
+    isDisabled?: boolean;
     btnType?: "button" | "submit";
-    textStyles?= string;
-    rightIcon?= string;
-    isDisabled = string;
-
+    containerStyles?: string;
+    textStyles?: string;
+    title: string;
+    rightIcon?: string;
+    handleClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export interface SearchManufacturerProps {
@@ -52,4 +51,8 @@ export interface CustomFilterProps {
 export interface ShowMoreProps {
     pageNumber: number;
     isNext: boolean
+}
+
+export interface HomeProps {
+    searchParams: FilterProps;
 }

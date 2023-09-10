@@ -26,9 +26,10 @@ export default function CarDetails({ car, isOpen, closeModal }: CarDetailsProps)
                         enter="ease-out duration-300"
                         enterFrom='opacity-0'
                         enterTo='opacity-100'
-                        Leave='ease-in duration-200'
+                        leave='ease-in duration-200'
                         leaveFrom='opacity-100'
-                        leave='opacity-0'
+                        leaveTo='opacity-0'
+
                     >
                         <div className="fixed inset-0 bg-black bg-opacity-25"></div>
                     </Transition.Child>
@@ -41,9 +42,9 @@ export default function CarDetails({ car, isOpen, closeModal }: CarDetailsProps)
                                 enter="ease-out duration-300"
                                 enterFrom='opacity-0 scale-95'
                                 enterTo='opacity-100 scale-100'
-                                Leave='ease-in duration-200 '
+                                leave='ease-in duration-200 '
                                 leaveFrom='opacity-100 scale-100'
-                                leave='opacity-0 scale-95'
+                                leaveTo='opacity-0 scale-95'
                             >
                                 <Dialog.Panel className="relative w-full 
                                 max-w-lg max-h-[90vh]

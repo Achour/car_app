@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { CarProps } from '@/types'
 import { CustomButton } from '.'
 import { calculateCarRent } from '@/utils'
-import { CarDetails} from '.'
+import { CarDetails } from '.'
 
 interface CarCardProps {
     car: CarProps
@@ -94,12 +94,10 @@ export default function CarCard({ car }: CarCardProps) {
                     <CustomButton title="View more"
                         containerStyles='w-full py-[16px]
                         rounded-full bg-primary-blue'
-                        textStyles = 'text-[14px] text-white 
-                        leading-[17px]
-                        font-bold'
+                        textStyles='text-[14px] text-white leading-[17px] font-bold'
                         rightIcon="/right-arrow.svg"
-                        handleClick= {() => setIsOpen(true)}
-                        />
+                        handleClick={() => setIsOpen(true)}
+                    />
                 </div>
 
             </div>
