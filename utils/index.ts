@@ -31,18 +31,27 @@ export function generateCarImageUrl(car: CarProps, angle?: string) {
 
 
 export const calculateCarRent = (city_mpg: number, year: number) => {
-    const basePricePerDay = 50; // Base rental price per day in dollars
-    const mileageFactor = 0.1; // Additional rate per mile driven
-    const ageFactor = 0.05; // Additional rate per year of vehicle age
+    // Define base rent price per year
+    const basePricePerYear = 2000; // Adjust this value as needed
 
-    // Calculate additional rate based on mileage and age
-    const mileageRate = city_mpg * mileageFactor;
-    const ageRate = (new Date().getFullYear() - year) * ageFactor;
+    // Define a multiplier based on city MPG
+    let mpgMultiplier;
 
-    // Calculate total rental rate per day
-    const rentalRatePerDay = basePricePerDay + mileageRate + ageRate;
+    if (city_mpg >= 30) {
+        mpgMultiplier = 1.2; // Good fuel efficiency
+    } else if (city_mpg >= 20) {
+        mpgMultiplier = 1; // Average fuel efficiency
+    } else {
+        mpgMultiplier = 0.8; // Poor fuel efficiency
+    }
 
-    return rentalRatePerDay.toFixed(0);
+    // Calculate the annual rent price
+    const annualRentPrice = basePricePerYear * (year - 2000 + 1) * mpgMultiplier;
+
+    // Calculate the daily rent price (assuming 365 days in a year)
+    const rentPerDay = Math.floor(annualRentPrice / 365);
+
+    return rentPerDay;
 };
 
 

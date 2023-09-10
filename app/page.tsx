@@ -11,7 +11,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || '',
-    year: searchParams.year || 2022,
+    year: searchParams.year || 2023,
     fuel: searchParams.fuel || '',
     limit: searchParams.limit || 10,
     model: searchParams.model || '',
